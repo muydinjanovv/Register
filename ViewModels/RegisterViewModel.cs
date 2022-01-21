@@ -18,12 +18,12 @@ public class RegisterViewModel : IValidatableObject
     
     [Required(ErrorMessage = "Enter the phonenumber")]
     [RegularExpression(@"^[\+]?(998[-\s\.]?)([0-9]{2}[-\s\.]?)([0-9]{3}[-\s\.]?)([0-9]{2}[-\s\.]?)([0-9]{2}[-\s\.]?)$",
-    ErrorMessage = "The phone number format is incorrect.")]
+    ErrorMessage = "The phone number format is not correct.")]
     [Display(Name = "Phonenumber")]
     public string Phone { get; set; }
     
     [Required(ErrorMessage = "Enter the email")]
-    [EmailAddress(ErrorMessage = "The email adress i incorrect")]
+    [EmailAddress(ErrorMessage = "The email adress is not correct")]
     [Display(Name = "Your email")]
     public string Email { get; set; }
     

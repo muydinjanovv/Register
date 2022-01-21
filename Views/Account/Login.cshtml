@@ -2,13 +2,20 @@
 
 <form class="mt-5 col"  method="post" asp-action="Login" asp-controller="Account">
     <input hidden="true" asp-for="@Model.ReturnUrl">
-    <label asp-for="Email"></label>
-    <input asp-for="Email">
+    <div class="form-label-group">
+        <input asp-for="Email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label class="text-muted" asp-for="Email" for="inputEmail"></label>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
 
-    <label asp-for="Password"></label>
-    <input asp-for="Password">
+     <div class="form-label-group">
+        <input asp-for="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <label class="text-muted" asp-for="Password" for="inputPassword"></label>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
 
-    <button type="submit">Login</button>
+    <button type="submit"  class="nav-Login btn btn-light btn-xs pull-right" >Login</button>
+
 </form>
 <div class="pull-right my-5">
 <a class="nav-Login btn btn-light btn-xs pull-right" href="/account/register?returnUrl=@Model.ReturnUrl">Register</a>
